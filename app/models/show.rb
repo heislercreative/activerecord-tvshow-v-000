@@ -8,6 +8,10 @@ class Show < ActiveRecord::Base
     self.find_by(self.maximum(:rating))
   end
 
+  def self.lowest_rating
+    self.minimum(:rating)
+  end
+
   def self.ratings_sum
     self.sum(:rating)
   end
